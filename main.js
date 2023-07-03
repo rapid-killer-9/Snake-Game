@@ -47,11 +47,18 @@ function clearBoard(){
 };
 
 function createFood(){
-
+    function randomFood(min, max){
+        const randNum = Math.round((Math.random()*(max-min)+min) / unitSize) * unitSize;
+        return randNum;
+    }
+    foodX = randomFood(0, gameWidth-unitSize);
+    foodY = randomFood(0, gameWidth-unitSize);
+    
 };
 
 function drawFood(){
-    
+    ctx.fillStyle = foodColor;
+    ctx.fillRect(foodX, foodY, unitSize, unitSize);
 };
 
 function moveSnake(){
@@ -75,5 +82,5 @@ function displayGameOver(){
 };
 
 function resetGame(){
-        
+
 };
